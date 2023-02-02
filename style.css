@@ -39,6 +39,10 @@ body {
   color: white;
 }
 
+.square.bomb {
+  background-color: #ff0000;
+}
+
 .square.medium-square {
   width: calc(100% / 9);
   height: calc(100% / 9);
