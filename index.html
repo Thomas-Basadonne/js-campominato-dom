@@ -32,28 +32,44 @@
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Campominato</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleMenu" aria-controls="collapsibleMenu" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleMenu">
-    
-                    <form class="d-flex justify-content-end ms-auto my-2">
-                        <select id="difficulty" class="form-control me-2 my-0 w-25">
-                            <option value="1">Easy</option>
-                            <option value="2">Medium</option>
-                            <option value="3">Hard</option>
-                        </select>
-                        <button id="start-game" class="btn btn-outline-success my-0 w-25" type="button">Start
-                            Game</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Campominato</a>
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleMenu"
+            aria-controls="collapsibleMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleMenu">
+            <form class="d-flex justify-content-end ms-auto my-2">
+              <select id="difficulty" class="form-control me-2 my-0 w-25">
+                <option value="1">Easy</option>
+                <option value="2">Medium</option>
+                <option value="3">Hard</option>
+              </select>
+              <button
+                id="start-game"
+                class="btn btn-outline-success my-0 w-25"
+                type="button"
+              >
+                Start Game
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <p
+      class="d-flex align-items-center justify-content-center mt-3"
+      id="result"
+    ></p>
 
     <main class="d-flex justify-content-center align-items-center mt-3">
       <!-- square * 100 -->

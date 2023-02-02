@@ -15,6 +15,10 @@ body {
   height: 40px;
 }
 
+#result {
+  color: #7fffd4;
+}
+
 #grid {
   width: 900px;
   height: 900px;

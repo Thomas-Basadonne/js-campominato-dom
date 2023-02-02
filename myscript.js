@@ -74,11 +74,21 @@ function generaGriglia(grid, gridDimension) {
     // });
     // debugger;
     cella.addEventListener("click", function () {
-      if (bombe.includes(this.innerHTML)) {
+      let celleSafe = document.getElementsByClassName("active").length;
+
+      if (celleSafe == 84) {
+        document.getElementById("result").innerHTML =
+          "COMPLIMENTI HAI VINTO!!!";
+      }
+
+      if (bombe.includes(parseInt(this.innerHTML))) {
         this.classList.toggle("bomb");
+        document.getElementById("result").innerHTML =
+          "Prima di esplodere hai trovato " + celleSafe + " celle :(";
       } else {
         this.classList.toggle("active");
       }
+
       console.log(this.innerHTML);
     });
     grid.append(cella);
