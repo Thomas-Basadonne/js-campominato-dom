@@ -31,8 +31,9 @@ console.log(bombe);
 
 startGame.addEventListener("click", function () {
   const gridEl = document.getElementById("grid");
-  const gridDimension = 100;
-  generaGriglia(gridEl, gridDimension);
+  const difficultLevel = document.getElementById("difficulty");
+  const level = difficultLevel.value;
+  generaGriglia(gridEl, level);
 });
 
 /**************************************************
@@ -40,20 +41,28 @@ startGame.addEventListener("click", function () {
  *                  FUNCIONS                      *
  *                                                *
  *  @param {HTMLElement} grid dove inserire griglia
- *  @param {int} dimension   dimensioni griglia   *
+ *  @param {int} difficolta   dimensioni griglia   *
  **************************************************/
 
-function generaGriglia(grid, gridDimension) {
+function generaGriglia(grid, difficolta) {
   grid.innerHTML = "";
 
+  let numeroCelle;
+  if (difficolta == 1) {
+    numeroCelle = 100;
+  } else if (difficolta == 2) {
+    numeroCelle = 81;
+  } else {
+    numeroCelle = 49;
+  }
   //random number
   const whitelist = [];
-  for (let i = 0; i < gridDimension; i++) {
+  for (let i = 0; i < numeroCelle; i++) {
     whitelist.push(i + 1);
   }
 
   // per 100 volte
-  for (let i = 0; i < gridDimension; i++) {
+  for (let i = 0; i < numeroCelle; i++) {
     // prendo un indice random whitelist
     const randomWhitelistIndex = generateRandomNumber(0, whitelist.length - 1);
     const testoCella = whitelist[randomWhitelistIndex];
@@ -68,11 +77,12 @@ function generaGriglia(grid, gridDimension) {
     // aggiungo classe alla cella
     cella.classList.add("square");
 
-    // cella.addEventListener("click", function () {
-    //   this.classList.toggle("active");
-    //   console.log(this.innerHTML);
-    // });
-    // debugger;
+    if (difficolta == 2) {
+      cella.classList.add("medium-square");
+    } else if (difficolta == 3) {
+      cella.classList.add("big-square");
+    }
+
     cella.addEventListener("click", function () {
       let celleSafe = document.getElementsByClassName("active").length;
 
